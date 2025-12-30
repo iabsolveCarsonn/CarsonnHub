@@ -1,5 +1,5 @@
-# CarsonnHub
-#The Forge
+# CarsonnHub Free no key
+# The Forge
 - Auto Mine/Auto kill mobs
 - nearest kill mobs during auto mine
 - using TP Safe doesnt detect Anti TP from server
@@ -11,3 +11,16 @@
 
 # Fish it
 - Auto Fishing (Blatant/Instant)
+- Disable Animation
+- Auto Tp to event (MEGALODON,WORM Fish,etc)
+- Auto tp 20+location
+- Auto tp christmas event
+- Auto Favorite Fish
+- Auto Sell Fish
+- Auto Buy Weather
+- Webhook
+- Auto Config
+
+Join Our Discord
+https://discord.gg/BV4HEpKgeU
+
