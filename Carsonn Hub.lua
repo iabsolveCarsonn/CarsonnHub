@@ -1,12 +1,11 @@
 --[[
-    🌟 CARSONN HUB - UNIVERSAL LOADER
+    🌟 CARSONN HUB - UNIVERSAL LOADER (FIXED)
     Auto Detect Game & Load Script
 ]]
 
 local PlaceId = game.PlaceId
 local MarketService = game:GetService("MarketplaceService")
 
--- Fungsi untuk notifikasi keren (Bawaan Roblox)
 local function Notify(title, text)
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = title;
@@ -20,33 +19,35 @@ Notify("Carsonn Hub", "Checking Game ID...")
 ----------------------------------------------------------------
 -- 1. KONFIGURASI GAME ID & SCRIPT LINK
 ----------------------------------------------------------------
--- Ganti angka ID dengan PlaceId game yang asli
--- Ganti Link dengan Raw Link script kamu (GitHub/Pastebin/Luarmor)
+-- PERHATIAN: Di sini cukup taruh LINK (URL) nya saja.
+-- Jangan pakai loadstring(...) di sini.
 
 local Games = {
-    [76558904092080] = { -- The Forge
+    [76558904092080] = { -- The Forge (Island 1)
         Name = "The Forge (Island 1)",
-        Script = 'loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/7f9190d52884159e"))()' 
+        -- Masukkan Link Raw-nya saja di sini
+        Link = "https://pandadevelopment.net/virtual/file/7f9190d52884159e" 
     },
 
-    [129009554587176] = { -- The Forge
+    [129009554587176] = { -- The Forge (Island 2)
         Name = "The Forge (Island 2)",
-        Script = 'loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/7f9190d52884159e"))()' 
+        Link = "https://pandadevelopment.net/virtual/file/7f9190d52884159e" 
     },
 
-    [131884594917121] = { -- The Forge
+    [131884594917121] = { -- The Forge (Island 3)
         Name = "The Forge (Island 3)",
-        Script = 'loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/7f9190d52884159e"))()' 
+        Link = "https://pandadevelopment.net/virtual/file/7f9190d52884159e" 
     },
     
     [121864768012064] = { -- Fish It
         Name = "Fish It",
-        Script = 'loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/7f9190d52884159e"))()'
+        -- Contoh link lain (sesuaikan dengan link kamu yang benar)
+        Link = "https://pandadevelopment.net/virtual/file/0d524390990c9bd9"
     }
 }
 
 ----------------------------------------------------------------
--- 2. LOGIKA DETEKSI (JANGAN UBAH INI)
+-- 2. LOGIKA DETEKSI (SUDAH DIPERBAIKI)
 ----------------------------------------------------------------
 local Detected = Games[PlaceId]
 
@@ -54,14 +55,15 @@ if Detected then
     Notify("Game Detected!", "Loading " .. Detected.Name .. " Script...")
     print("[Carsonn Hub] Game Found: " .. Detected.Name)
     
-    -- Eksekusi Script
+    -- Eksekusi Script (Diperbaiki)
+    -- Kita panggil loadstring & HttpGet di sini secara langsung
     local success, err = pcall(function()
-        loadstring(Detected.Script)()
+        loadstring(game:HttpGet(Detected.Link))()
     end)
 
     if not success then
         warn("[Carsonn Hub] Error Loading Script: " .. err)
-        Notify("Error!", "Failed to load script. Check Console (F9).")
+        Notify("Error!", "Script error! Check Console (F9).")
     end
 else
     -- Jika game tidak terdaftar
@@ -71,10 +73,8 @@ else
     Notify("Unsupported Game", GameName .. " is not supported yet.")
     print("[Carsonn Hub] Unsupported Place ID: " .. PlaceId)
     
-    -- Opsional: Copy ID biar gampang lapor ke dev
     if setclipboard then
         setclipboard(tostring(PlaceId))
-        Notify("Copied ID", "Place ID copied to clipboard for developer report.")
+        Notify("Copied ID", "Place ID copied to clipboard.")
     end
 end
-
