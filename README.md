@@ -1,4 +1,4 @@
-# CarsonnHub Free no key
+# CarsonnHub Roblox Script Free no key
 # The Forge
 - Auto Mine/Auto kill mobs
 - nearest kill mobs during auto mine
