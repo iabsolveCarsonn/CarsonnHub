@@ -23,7 +23,7 @@
 
 # Installation
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iabsolveCarsonn/CarsonnHub/refs/heads/main/Carsonn%20Hub.lua"))() ", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iabsolveCarsonn/CarsonnHub/refs/heads/main/Carsonn%20Hub.lua"))() 
 ```
 
 Join Our Discord
