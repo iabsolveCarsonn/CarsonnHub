@@ -21,6 +21,8 @@
 - Webhook
 - Auto Config
 
+# Installation
+```loadstring(game:HttpGet("https://raw.githubusercontent.com/iabsolveCarsonn/CarsonnHub/refs/heads/main/Carsonn%20Hub.lua"))() ```
 Join Our Discord
 https://discord.gg/BV4HEpKgeU
 
